@@ -31,8 +31,9 @@ internal class DataInsertHelper
                 );";
 
         await connection.ExecuteAsync(insertReadQuery, readTableCfModel.MangaId, readTableCfModel.Rating,
-            readTableCfModel.ReadStatus, readTableCfModel.Progress, readTableCfModel.Priority, 
-            readTableCfModel.Review, readTableCfModel.StartDate, readTableCfModel.EndDate, readTableCfModel.LastUpdated);
+            readTableCfModel.ReadStatus, readTableCfModel.Progress, readTableCfModel.Priority,
+            readTableCfModel.Review, readTableCfModel.StartDate, readTableCfModel.EndDate,
+            readTableCfModel.LastUpdated);
     }
 
     internal async Task insertSession(SQLiteAsyncConnection connection, SessionTableCfModel sessionTableCfModel)
@@ -45,7 +46,7 @@ internal class DataInsertHelper
                     ?, ?, ?, ?
                 );";
 
-        await connection.ExecuteAsync(insertSessionQuery, sessionTableCfModel.ReadId, sessionTableCfModel.Chapter, 
+        await connection.ExecuteAsync(insertSessionQuery, sessionTableCfModel.ReadId, sessionTableCfModel.Chapter,
             sessionTableCfModel.Comment, sessionTableCfModel.LastUpdated);
     }
 }

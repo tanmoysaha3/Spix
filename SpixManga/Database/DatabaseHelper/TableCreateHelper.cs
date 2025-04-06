@@ -4,21 +4,21 @@ namespace SpixManga.Database.DatabaseHelper;
 
 internal class TableCreateHelper
 {
-            internal async Task CreateMangaIdTable(SQLiteAsyncConnection connection)
-        {
-            string createMangaIdTableQuery = @"
+    internal async Task CreateMangaIdTable(SQLiteAsyncConnection connection)
+    {
+        string createMangaIdTableQuery = @"
                 CREATE TABLE IF NOT EXISTS MangaIdTable (
                     MangaId INTEGER PRIMARY KEY AUTOINCREMENT,
                     MuOldId TEXT NOT NULL UNIQUE,
                     MuNewId NOT NULL UNIQUE
                 );";
 
-            await connection.ExecuteAsync(createMangaIdTableQuery);
-        }
+        await connection.ExecuteAsync(createMangaIdTableQuery);
+    }
 
-        internal async Task CreateReadTable(SQLiteAsyncConnection connection)
-        {
-            string createReadTableQuery = @"
+    internal async Task CreateReadTable(SQLiteAsyncConnection connection)
+    {
+        string createReadTableQuery = @"
                 CREATE TABLE IF NOT EXISTS ReadTable (
                     ReadId INTEGER PRIMARY KEY AUTOINCREMENT,
                     MangaId INTEGER NOT NULL,
@@ -33,12 +33,12 @@ internal class TableCreateHelper
                     FOREIGN KEY (MangaId) REFERENCES MangaIdTable(MangaId) ON DELETE CASCADE
                 );";
 
-            await connection.ExecuteAsync(createReadTableQuery);
-        }
+        await connection.ExecuteAsync(createReadTableQuery);
+    }
 
-        internal async Task CreateSessionTable(SQLiteAsyncConnection connection)
-        {
-            string createSessionTableQuery = @"
+    internal async Task CreateSessionTable(SQLiteAsyncConnection connection)
+    {
+        string createSessionTableQuery = @"
                 CREATE TABLE IF NOT EXISTS SessionTable (
                     SessionId INTEGER PRIMARY KEY AUTOINCREMENT,
                     ReadId INTEGER NOT NULL,
@@ -48,6 +48,6 @@ internal class TableCreateHelper
                     FOREIGN KEY (ReadId) REFERENCES ReadTable(ReadId) ON DELETE CASCADE
                 );";
 
-            await connection.ExecuteAsync(createSessionTableQuery);
-        }
+        await connection.ExecuteAsync(createSessionTableQuery);
+    }
 }

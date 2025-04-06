@@ -25,6 +25,7 @@ internal class DataUpdateHelper
 
         await connection.ExecuteAsync(updateReadQuery, readTableCfModel.MangaId, readTableCfModel.Rating,
             readTableCfModel.ReadStatus, readTableCfModel.Progress, readTableCfModel.Priority,
-            readTableCfModel.Review, readTableCfModel.StartDate, readTableCfModel.EndDate, readTableCfModel.LastUpdated, readTableCfModel.ReadId);
+            readTableCfModel.Review, readTableCfModel.StartDate, readTableCfModel.EndDate, readTableCfModel.LastUpdated,
+            readTableCfModel.ReadId);
     }
 }
