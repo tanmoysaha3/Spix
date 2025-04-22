@@ -15,8 +15,7 @@ public class Base36Converter
             result.Insert(0, chars[(int)(number % 36)]);
             number /= 36;
         }
-
-        return result.ToString();
+        return result.ToString().ToLower();
     }
 
     internal static long FromBase36(string input)
@@ -29,7 +28,6 @@ public class Base36Converter
         {
             result = result * 36 + chars.IndexOf(c);
         }
-
         return result;
     }
 }

@@ -4,6 +4,9 @@ namespace SpixManga.Database;
 
 internal class SQLiteHelper
 {
-    private const string DbNameMu = "MangaUpdate.sqlite";
-    public string DbPathMu => Path.Combine(AppDomain.CurrentDomain.BaseDirectory, DbNameMu);
+    private const string DbNameSeriesMu = "SeriesMuDb.sqlite";
+    public string DbPathSeriesMu => Path.Combine(AppDomain.CurrentDomain.BaseDirectory, DbNameSeriesMu);
+
+    private const string DbNameSeriesMuImage = "SeriesMuImageDb.sqlite";
+    public string DbPathSeriesMuImage => Path.Combine(AppDomain.CurrentDomain.BaseDirectory, DbNameSeriesMuImage);
 }

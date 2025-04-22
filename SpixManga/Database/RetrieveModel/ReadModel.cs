@@ -1,9 +1,9 @@
-namespace SpixManga.Database.Models;
+namespace SpixManga.Database.RetrieveModel;
 
-public class ReadTableCfModel
+public class ReadModel
 {
     public int ReadId { get; set; }
-    public int MangaId { get; set; }
+    public int SeriesId { get; set; }
     public double? Rating { get; set; }
     public string? ReadStatus { get; set; }
     public double? Progress { get; set; }

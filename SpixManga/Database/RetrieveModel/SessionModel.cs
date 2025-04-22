@@ -1,6 +1,6 @@
-namespace SpixManga.Database.Models;
+namespace SpixManga.Database.RetrieveModel;
 
-public class SessionTableCfModel
+public class SessionModel
 {
     public int SessionId { get; set; }
     public int ReadId { get; set; }
