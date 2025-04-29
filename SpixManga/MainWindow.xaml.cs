@@ -8,6 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using SpixManga.UserControls;
 
 namespace SpixManga;
 
@@ -19,5 +20,6 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         InitializeComponent();
+        FilterOptions.Content = new SeriesFilterUC();
     }
 }

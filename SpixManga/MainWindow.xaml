@@ -7,6 +7,33 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="14*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel 
+            Grid.Column="0"
+            Background="AliceBlue">
+        </StackPanel>
+
+        <Grid
+            Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*" MaxHeight="160" MinHeight="100"/>
+                <RowDefinition Height="7*"/>
+            </Grid.RowDefinitions>
+
+            <UserControl
+                x:Name="FilterOptions"
+                Grid.Row="0"/>
+
+            <StackPanel
+                Grid.Row="1"
+                Background="LavenderBlush">
+            </StackPanel>
+            
+        </Grid>
 
     </Grid>
 </Window>

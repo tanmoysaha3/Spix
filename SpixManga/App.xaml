@@ -4,6 +4,124 @@
              xmlns:local="clr-namespace:SpixManga"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+         <Style TargetType="Label" x:Key="CustomLabelStyle">
+    <!-- Customize only specific properties of Label -->
+    <Setter Property="FontSize" Value="13"/>
+    <Setter Property="FontWeight" Value="SemiBold"/>
+    <Setter Property="Foreground" Value="Black"/>
+    <Setter Property="FontFamily" Value="Times New Roman"/>
+    <Setter Property="Margin" Value="8, 0, 0, 0"/>
+    <Setter Property="HorizontalAlignment" Value="Left"/>
+</Style>
+
+<Style TargetType="ComboBox" x:Key="CustomComboBox">
+    <Setter Property="Height" Value="24"/>
+    <Setter Property="MaxDropDownHeight" Value="160"/>
+    <Setter Property="SelectedIndex" Value="0"/>
+    <Setter Property="FontSize" Value="12"/>
+    <Setter Property="FontWeight" Value="DemiBold"/>
+    <Setter Property="VerticalContentAlignment" Value="Center"/>
+    <Setter Property="HorizontalAlignment" Value="Left"/>
+    <Setter Property="Margin" Value="2"/>
+    <Setter Property="ScrollViewer.CanContentScroll" Value="False"/>
+</Style>
+
+<Style TargetType="TextBox" x:Key="CustomTextBoxStyle">
+    <Setter Property="FontSize" Value="12"/>
+    <Setter Property="FontWeight" Value="DemiBold"/>
+    <Setter Property="HorizontalAlignment" Value="Left"/>
+    <Setter Property="Margin" Value="2"/>
+</Style>
+
+<Style TargetType="TextBox" BasedOn="{StaticResource CustomTextBoxStyle}" x:Key="CustomTextBoxSingleLineStyle">
+    <Setter Property="Height" Value="24"/>
+    <Setter Property="Padding" Value="4, 0, 0, 0"/>
+    <Setter Property="VerticalContentAlignment" Value="Center"/>
+</Style>
+
+<Style x:Key="NoFocusBackgroundButton" TargetType="Button">
+    <Setter Property="Margin" Value="4,0,4,0"/>
+    <Setter Property="FontFamily" Value="TimesNewRoman"/>
+    <Setter Property="FontSize" Value="13"/>
+    <Setter Property="Template">
+        <Setter.Value>
+            <ControlTemplate TargetType="Button">
+                <Border Background="Transparent" BorderBrush="Transparent" BorderThickness="0">
+                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Border>
+            </ControlTemplate>
+        </Setter.Value>
+    </Setter>
+    <Style.Triggers>
+        <Trigger Property="IsMouseOver" Value="True">
+            <Setter Property="Background" Value="Transparent"/>
+        </Trigger>
+    </Style.Triggers>
+</Style>
+
+<Style x:Key="PaginationButton" TargetType="Button" BasedOn="{StaticResource NoFocusBackgroundButton}">
+    <Style.Triggers>
+        <Trigger Property="IsMouseOver" Value="True">
+            <Setter Property="Foreground" Value="Red"/>
+            <Setter Property="FontWeight" Value="Heavy"/>
+        </Trigger>
+    </Style.Triggers>
+</Style>
+
+<Style x:Key="BlueForegroundButton" TargetType="Button" BasedOn="{StaticResource NoFocusBackgroundButton}">
+    <Style.Triggers>
+        <Trigger Property="IsMouseOver" Value="True">
+            <Setter Property="Foreground" Value="Blue"/>
+        </Trigger>
+    </Style.Triggers>
+</Style>
+
+<Style x:Key="CustomCheckBox" TargetType="CheckBox">
+    <Setter Property="FontSize" Value="12.5"/>
+    <Setter Property="Template">
+        <Setter.Value>
+            <ControlTemplate TargetType="CheckBox">
+                <StackPanel Orientation="Horizontal">
+                    <Border x:Name="Box"
+                        Width="12.5" Height="12.5"
+                        BorderBrush="Black" BorderThickness="1"
+                        Margin="0,0,4,0"
+                        Background="White"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+                        <Grid>
+                            <TextBlock 
+                                x:Name="CheckMark"
+                                FontSize="9"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                TextAlignment="Center"
+                                Visibility="Collapsed"/>
+                        </Grid>
+                    </Border>
+                    <ContentPresenter VerticalAlignment="Center"/>
+                </StackPanel>
+                <ControlTemplate.Triggers>
+                    <!-- Checked -->
+                    <Trigger Property="IsChecked" Value="True">
+                        <Setter TargetName="CheckMark" Property="Text" Value="✔"/>
+                        <Setter TargetName="CheckMark" Property="Foreground" Value="Green"/>
+                        <Setter TargetName="CheckMark" Property="Visibility" Value="Visible"/>
+                    </Trigger>
+                    <!-- Indeterminate -->
+                    <Trigger Property="IsChecked" Value="{x:Null}">
+                        <Setter TargetName="CheckMark" Property="Text" Value="❌"/>
+                        <Setter TargetName="CheckMark" Property="Foreground" Value="Red"/>
+                        <Setter TargetName="CheckMark" Property="Visibility" Value="Visible"/>
+                    </Trigger>
+                    <!-- Unchecked -->
+                    <Trigger Property="IsChecked" Value="False">
+                        <Setter TargetName="CheckMark" Property="Visibility" Value="Collapsed"/>
+                    </Trigger>
+                </ControlTemplate.Triggers>
+            </ControlTemplate>
+        </Setter.Value>
+    </Setter>
+</Style>
     </Application.Resources>
 </Application>
