@@ -7,7 +7,7 @@ public class SeriesDetailsModel
     public string? Description { get; set; }
     public string? SeriesType { get; set; }
     public int? Year { get; set; }
-    public double BayesianRating { get; set; }
+    public double? Rating { get; set; }
     public string? ImageUrl { get; set; }
     public int? LatestChapter { get; set; }
     public string? OriginStatus { get; set; }

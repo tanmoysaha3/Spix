@@ -6,5 +6,6 @@ public class SessionModel
     public int ReadId { get; set; }
     public double? Chapter { get; set; }
     public string? Comment { get; set; }
+    public string? SiteSource {  get; set; }
     public string? LastUpdated { get; set; }
 }
